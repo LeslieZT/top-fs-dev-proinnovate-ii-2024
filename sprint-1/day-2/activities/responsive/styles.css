@@ -1,0 +1,283 @@
+/* Estilos base para móviles (Mobile First) */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+ 
+}
+
+.header-top , .navbar {
+  font-family:'Roboto', sans-serif;
+}
+
+/* ================================  HEADER =====================================  */
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* contact-info */
+.contact-info {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item + .contact-item::before {
+  content: "|";
+  margin: auto 10px;
+}
+
+.contact-item a {
+  text-decoration: none;
+  display: flex;
+}
+
+.contact-item span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-item a img,
+.contact-item span img {
+  margin-right: 8px;
+}
+
+.contact-item a,
+.contact-item span {
+  color: #4e4b66;
+  font-size: 14px;
+}
+/* social-icons */
+.social-icons {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-icons a {
+  display: inline-flex;
+}
+
+/* =============================== NAVBAR ================================ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 5px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav {
+  display: none;
+}
+
+.navbar .logo,
+.navbar .bars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 164;
+  height: 36px;
+}
+
+.navbar .bars img {
+  background-color: black;
+}
+
+/* Ocultar los ítems adicionales en pantallas pequeñas */
+.contact-item:nth-child(2),
+.contact-item:nth-child(3) {
+  display: none;
+}
+
+
+/* =============================== MAIN ================================ */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que la imagen cubra todo el contenedor */
+  z-index: -1; /* Envía la imagen al fondo */
+}
+
+.graphic {
+  position: absolute;
+  bottom: 0; /* Posiciona la imagen al final de la imagen de fondo */
+  width: 100%;
+  z-index: 0; /* Asegura que la imagen se superponga correctamente */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté sobre las imágenes */
+  text-align: center;
+  color: #fff; 
+  padding: 20px;
+}
+.topper {
+  font-size: 13px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: inherit;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #ff6a3e;
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 49px;
+  font-weight: 900;
+  line-height: 1.2em;
+  text-align: inherit;
+  color: #FFFFFF;
+}
+
+
+.button-hero {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.button-solid {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+@media (min-width: 768px) {
+  .contact-item:nth-child(2) {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* =============================== HEADER ================================ */
+  .header-top {
+    padding: 10px 50px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .social-icons a {
+    margin-left: 20px;
+  }
+  .contact-item:nth-child(2),
+  .contact-item:nth-child(3) {
+    display: flex;
+  }
+
+  /* =============================== NAVBAR ================================ */
+
+  .navbar {
+    padding: 10px 50px;
+  }
+
+  .navbar .bars {
+    display: none;
+  }
+
+  .navbar .logo {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .logo img {
+    width: 217px;
+    height: 48px;
+  }
+
+  .navbar .nav {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li {
+    margin: 0 15px;
+  }
+
+  .nav-links .subnav {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #4E4B66;
+  }
+
+  .nav-links a:hover {
+    color: #F41E1E;
+  }
+  
+  .buttom-navbar .button-solid {
+    height: 46px;
+    background-color: #F41E1E;
+    border: none;
+    padding: 0 1.5rem;
+    color: white;
+    font-weight: bold;
+    box-sizing: border-box;
+
+  }
+  
+    /* =============================== MAIN ================================ */
+
+    #hero .title {
+      font-size: 84px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
