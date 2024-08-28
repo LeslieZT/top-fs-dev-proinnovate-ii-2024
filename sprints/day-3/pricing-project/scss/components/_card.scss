@@ -1,0 +1,112 @@
+@use "../shared/variables" as variables;
+
+.pricing__plans {
+  width: 100%;
+  max-width: 57rem;
+  margin: variables.$spacing-gap-large 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin plan-base {
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+
+.pricing__plan {
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: variables.$spacing-card-padding;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  color: variables.$color-body-text;
+
+  &--popular {
+    background-color: variables.$color-text-dark;
+    padding: clamp(3rem, 6vw, 4rem) variables.$spacing-card-padding;
+    color: variables.$color-text-light;
+  }
+
+  &-package {
+    font-size: clamp(0.8125rem, 1.4vw, 1rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem 0;
+    color: variables.$color-body-text;
+    display: block;
+  }
+  
+
+  &-flex-wrapper {
+    width: 100%;
+    margin: 0 0 variables.$spacing-gap-large 0;
+    padding-bottom: variables.$spacing-gap-large;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+      
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+        90deg,
+        rgba(232, 232, 232, 0.2) 0%,
+        #e8e8e8 53.78%,
+        rgba(232, 232, 232, 0.2) 100%
+        );
+        opacity: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+    }
+  }
+
+
+  &-price {
+    font-size: variables.$font-size-header;
+    font-weight: 900;
+    line-height: 1.2em;
+    color: variables.$color-text-dark;
+  }
+
+  &-frequency {
+    @include plan-base;
+    display: block;
+    color: variables.$color-text-dark;
+  }
+  
+  &-description {
+    @include plan-base;
+    margin: 0 0 auto;
+  }
+}
+
+
+.pricing__plan--popular .pricing__plan-package,
+.pricing__plan--popular .pricing__plan-frequency,
+.pricing__plan--popular .pricing__plan-description,
+.pricing__plan--popular .pricing__plan-price {
+  color: variables.$color-text-light;
+}
+
+
+
+
+
+

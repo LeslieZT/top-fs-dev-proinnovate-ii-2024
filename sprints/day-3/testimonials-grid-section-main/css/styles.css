@@ -1,0 +1,128 @@
+:root {
+  --font-family: "Fira Sans Condensed", sans-serif;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #fafbfc;
+  --color-body-text: #4e4b66;
+  --color-bg-light: #F7F7F7;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #edf2f8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.testimonial__container {
+  width: 90%;
+  margin: 100px auto;
+  font-family: var(--font-family);
+}
+
+.testimonial__item {
+  border-radius: 10px;
+  padding: 3rem 2rem;
+}
+
+.testimonial__item-header img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.testimonial__item-profile {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.testimonial__item-profile-name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.testimonial__item-profile-verified {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.testimonial__item-description {
+  text-align: left;
+}
+
+.testimonial__item-description-subtitle {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.4rem;
+}
+
+.testimonial__item-description-text {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.testimonial__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#testimonial__item-1 {
+  background-color: #733fc8;
+}
+#testimonial__item-2 {
+  background-color: #49556b;
+}
+
+#testimonial__item-3,
+#testimonial__item-4 {
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+#testimonial__item-5 {
+  background-color: #31364b;
+}
+
+#testimonial__item-1 , #testimonial__item-2, #testimonial__item-5 {
+  color: var(--color-text-light);
+}
+
+@media only screen and (min-width: 64rem) {
+  .testimonial__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  #testimonial__item-1 {
+    grid-column: 1 / 3;
+  }
+
+  #testimonial__item-5 {
+    grid-column: 2 / 4;
+  }
+
+  #testimonial__item-3 {
+    grid-column: 4 / 5; /* Ocupa la cuarta columna */
+    grid-row: 1 / 3;
+  }
+}

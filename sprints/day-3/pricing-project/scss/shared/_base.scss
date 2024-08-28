@@ -1,0 +1,13 @@
+@use './variables' as variables;
+
+body {
+    font-family: variables.$font-family;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
